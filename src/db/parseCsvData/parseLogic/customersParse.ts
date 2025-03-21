@@ -41,7 +41,7 @@ export const customersParse = async (): Promise<CustomerI[]> => {
                 })
             })
             .on('end', () => {
-                 console.log(records)
+                 // console.log(records)
                 resolve(records)
             })
             .on('error', (error: Error) => reject(error))

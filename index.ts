@@ -5,6 +5,11 @@ import {employeesParse} from "./src/db/parseCsvData/parseLogic/employeesParse";
 import {employeeTerritoriesParse} from "./src/db/parseCsvData/parseLogic/employeeTerritoriesParse";
 import {orderDetailsParse} from "./src/db/parseCsvData/parseLogic/orderDetailsParse";
 import {ordersParse} from "./src/db/parseCsvData/parseLogic/ordersParse";
+import {productsParse} from "./src/db/parseCsvData/parseLogic/productsParse";
+import {suppliesParse} from "./src/db/parseCsvData/parseLogic/suppliesParse";
+import {regionsParse} from "./src/db/parseCsvData/parseLogic/regionsParse";
+import {shippersParse} from "./src/db/parseCsvData/parseLogic/shippersParse";
+import {territoriesParse} from "./src/db/parseCsvData/parseLogic/territoriesParse";
 
 const PORT = 3010
 const app = express()
@@ -16,6 +21,11 @@ app.get('/', (req, res) => {
     //employeeTerritoriesParse()
     //orderDetailsParse()
     //ordersParse()
+    //productsParse()
+    //suppliesParse()
+    //regionsParse()
+    //shippersParse()
+    //territoriesParse()
     res.send('Hello World!')
 })
 

@@ -46,7 +46,7 @@ export const ordersParse = async (): Promise<orderI[]> => {
                 });
             })
             .on('end', () => {
-                console.log(records);
+                // console.log(records);
                 resolve(records);
             })
             .on('error', (error) => {

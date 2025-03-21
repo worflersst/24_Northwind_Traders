@@ -29,7 +29,7 @@ export const orderDetailsParse = async (): Promise<orderDetailI[]> => {
 
             })
             .on('end', () => {
-                 console.log(records)
+                // console.log(records)
                 resolve(records)
             })
             .on('error', (error) => {
