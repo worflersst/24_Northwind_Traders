@@ -13,7 +13,7 @@ interface EmployeeI {
     Address: string;
     City: string;
     Region: string | null;
-    PostalCode: number | string;
+    PostalCode: string;
     Country: string;
     HomePhone: string;
     Extension: number;
@@ -26,8 +26,8 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
 
     return new Promise((resolve, reject) => {
         const records: EmployeeI[] = [];
-        let id6UserData = [];
-        let id7UserData = [];
+        let id6UserData: any[] = [];
+        let id7UserData: any[] = [];
         let rowCount = 0
 
         fs.createReadStream(filePath)
@@ -47,7 +47,7 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
                             Address: row.Address,
                             City: row.City,
                             Region: row.Region,
-                            PostalCode: Number(row.PostalCode),
+                            PostalCode: String(row.PostalCode),
                             Country: row.Country,
                             HomePhone: row.HomePhone,
                             Extension: Number(row.Extension),
@@ -67,7 +67,7 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
                             Address: row.City,
                             City: row.Region,
                             Region: row.PostalCode,
-                            PostalCode: Number(row.Country),
+                            PostalCode: String(row.Country),
                             Country: row.HomePhone,
                             HomePhone: row.Extension,
                             Extension: Number(row.Notes),
@@ -87,7 +87,7 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
                             Address: row.Address,
                             City: row.City,
                             Region: row.Region,
-                            PostalCode: Number(row.PostalCode),
+                            PostalCode: String(row.PostalCode),
                             Country: row.Country,
                             HomePhone: row.HomePhone,
                             Extension: Number(row.Extension),
@@ -107,7 +107,7 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
                             Address: row.Address,
                             City: row.City,
                             Region: row.Region,
-                            PostalCode: Number(row.PostalCode),
+                            PostalCode: String(row.PostalCode),
                             Country: row.Country,
                             HomePhone: row.HomePhone,
                             Extension: Number(row.Extension),
@@ -201,7 +201,7 @@ export const employeesParse = async (): Promise<EmployeeI[]> => {
                             Address: row.Address,
                             City: row.City,
                             Region: row.Region,
-                            PostalCode: Number(row.PostalCode),
+                            PostalCode: String(row.PostalCode),
                             Country: row.Country,
                             HomePhone: row.HomePhone,
                             Extension: Number(row.Extension),

@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`Example app listening on port ${PORT}`)
-    runDB()
+    await runDB()
 })
