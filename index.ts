@@ -10,6 +10,7 @@ import {suppliesParse} from "./src/db/parseCsvData/parseLogic/suppliesParse";
 import {regionsParse} from "./src/db/parseCsvData/parseLogic/regionsParse";
 import {shippersParse} from "./src/db/parseCsvData/parseLogic/shippersParse";
 import {territoriesParse} from "./src/db/parseCsvData/parseLogic/territoriesParse";
+import {runDB} from "./src/db/connectsToTheDB/postgresqlConnect";
 
 const PORT = 3010
 const app = express()
@@ -31,4 +32,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)
+    runDB()
 })
