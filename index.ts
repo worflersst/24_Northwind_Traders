@@ -16,21 +16,10 @@ const PORT = 3010
 const app = express()
 
 app.get('/', (req, res) => {
-    //categoriesParse()
-    //customersParse()
-    //employeesParse()
-    //employeeTerritoriesParse()
-    //orderDetailsParse()
-    //ordersParse()
-    //productsParse()
-    //suppliesParse()
-    //regionsParse()
-    //shippersParse()
-    //territoriesParse()
     res.send('Hello World!')
 })
 
 app.listen(PORT, async () => {
     console.log(`Example app listening on port ${PORT}`)
-    await runDB()
+     await runDB()
 })

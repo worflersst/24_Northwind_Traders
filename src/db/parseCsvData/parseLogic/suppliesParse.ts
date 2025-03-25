@@ -20,6 +20,10 @@ interface SupplierI {
 export const suppliesParse = async (): Promise<SupplierI[]> => {
     let records:SupplierI[]  = []
 
+    const cleanString = (value: string ): string  => {
+        return value.replace(/[\r\n]+/g, ' ').trim() ;
+    };
+
     const filePath = path.resolve(process.cwd(), './src/db/parseCsvData/csvFiles/Supplies.csv');
 
     return new Promise((resolve, reject) => {
@@ -31,7 +35,7 @@ export const suppliesParse = async (): Promise<SupplierI[]> => {
                     CompanyName: row.CompanyName,
                     ContactName: row.ContactName,
                     ContactTitle: row.ContactTitle,
-                    Address: row.Address,
+                    Address: cleanString(row.Address),
                     City: row.City,
                     Region: row.Region == '' ? null : row.Region,
                     PostalCode: row.PostalCode == '' ? null : row.PostalCode,

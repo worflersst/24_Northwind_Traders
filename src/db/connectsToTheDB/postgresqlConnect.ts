@@ -1,4 +1,5 @@
 import pg from 'pg'
+import {insertAllData} from "../insertDBData/insertAllData";
 const {Client} = pg
 
 export enum postgresTableName {
@@ -27,6 +28,7 @@ export const runDB = async () => {
     try {
         await client.connect()
         console.log("Connected to the database");
+        await insertAllData()
     }catch (error) {
         await client.end()
         console.log(`Can't connect to the database: ${error}`);
