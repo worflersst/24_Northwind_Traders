@@ -15,7 +15,7 @@ interface orderI {
     ShipAddress: string;
     ShipCity: string;
     ShipRegion: string | null;
-    ShipPostalCode: string | number;
+    ShipPostalCode: string ;
     ShipCountry: string;
 }
 
@@ -41,7 +41,7 @@ export const ordersParse = async (): Promise<orderI[]> => {
                     ShipAddress: row.ShipAddress,
                     ShipCity: row.ShipCity,
                     ShipRegion: row.ShipRegion && row.ShipRegion.trim() !== '' ? row.ShipRegion : null,
-                    ShipPostalCode: isNaN(Number(row.ShipPostalCode)) ? row.ShipPostalCode : Number(row.ShipPostalCode),
+                    ShipPostalCode: String(row.ShipPostalCode),
                     ShipCountry: row.ShipCountry
                 });
             })
