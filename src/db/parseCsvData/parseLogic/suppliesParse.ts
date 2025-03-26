@@ -2,7 +2,7 @@ import path from "path";
 import fs from 'fs'
 import csv from 'csv-parser'
 
-interface SupplierI {
+export interface SupplierI {
     SupplierID: number;
     CompanyName: string;
     ContactName: string;
