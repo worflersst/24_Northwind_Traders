@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import csv from "csv-parser";
 
-interface ProductI {
+export interface ProductI {
     ProductID: number;
     ProductName: string;
     SupplierID: number;
