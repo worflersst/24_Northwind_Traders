@@ -1,12 +1,10 @@
-import {orderI} from "../db/parseCsvData/parseLogic/ordersParse";
+import {ordersRepository} from "../repository/ordersRepository";
 
 export const ordersController = {
-    async getOrdersForPage(queryPage: string) {
-        // Promise<orderI[]>
-        // return await ordersRepository.getOrdersForPage(queryPage)
+    async getOrdersForPage(queryPage: number) {
+        return await ordersRepository.getOrdersForPage(queryPage)
     },
-    async getOrdersById(id: string) {
-        // Promise<orderI>
-        // return await ordersRepository.getOrdersById(id)
+    async getOrdersById(id: number) {
+         return await ordersRepository.getOrdersAndProductById(id)
     }
 }

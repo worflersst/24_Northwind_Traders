@@ -1,12 +1,10 @@
-import {SupplierI} from "../db/parseCsvData/parseLogic/suppliesParse";
+import {suppliersRepository} from "../repository/suppliersRepository";
 
 export const suppliersController = {
-    async getSuppliersForPage(queryPage: string) {
-        // Promise<SupplierI[]>
-        // return await suppliersRepository.getSuppliersForPage(queryPage)
+    async getSuppliersForPage(queryPage: number) {
+         return await suppliersRepository.getSuppliersForPage(queryPage)
     },
-    async getSupplierById(id: string) {
-        // Promise<SupplierI>
-        // return await suppliersRepository.getsupplierById(id)
+    async getSupplierById(id: number) {
+         return await suppliersRepository.getSupplierById(id)
     }
 }
