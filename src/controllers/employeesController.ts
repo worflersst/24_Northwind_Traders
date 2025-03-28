@@ -1,12 +1,10 @@
-import {EmployeeI} from "../db/parseCsvData/parseLogic/employeesParse";
+import {employeesRepository} from "../repository/employeesRepository";
 
 export const employeesController = {
-    async getEmployeesForPage(queryPage: string) {
-        // Promise<EmployeeI[]>
-        // return await employeesRepository.getEmployeesForPage(queryPage)
+    async getEmployeesForPage(queryPage: number) {
+         return await employeesRepository.getEmployeesForPage(queryPage)
     },
-    async getEmployeesById(id: string) {
-        // Promise<EmployeeI>
-        // return await employeesRepository.getEmployeesById(id)
+    async getEmployeesById(id: number) {
+         return await employeesRepository.getEmployeesById(id)
     }
 }
