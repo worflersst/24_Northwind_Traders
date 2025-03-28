@@ -1,13 +1,11 @@
-import {CustomerI} from "../db/parseCsvData/parseLogic/customersParse";
+import {customersRepository} from "../repository/customersRepository";
 
 export const customersController = {
-    async getCustomersForPage(queryPage: string) {
-        // Promise<CustomerI[]>
-        // return await customersRepository.getСustomersForPage(queryPage)
+    async getCustomersForPage(queryPage: number) {
+        return await customersRepository.getСustomersForPage(queryPage)
     },
     async getCustomersById(id: string) {
-        // Promise<CustomerI>
-        // return await customersRepository.getCustomerById(id)
+         return await customersRepository.getCustomerById(id)
     }
 }
 
